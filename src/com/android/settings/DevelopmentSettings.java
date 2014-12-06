@@ -193,6 +193,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private SwitchPreference mKeepScreenOn;
     private SwitchPreference mBtHciSnoopLog;
     private SwitchPreference mEnableOemUnlock;
+    private SwitchPreference mQuickBoot;
     private SwitchPreference mAllowMockLocation;
     private SwitchPreference mDebugViewAttributes;
 
@@ -242,7 +243,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
     private PreferenceScreen mProcessStats;
 
-    private CheckBoxPreference mDevelopmentShortcut;
+    private SwitchPreference mDevelopmentShortcut;
 
     private final ArrayList<Preference> mAllPrefs = new ArrayList<Preference>();
 
@@ -312,7 +313,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         mDebugViewAttributes = findAndInitSwitchPref(DEBUG_VIEW_ATTRIBUTES);
         mPassword = (PreferenceScreen) findPreference(LOCAL_BACKUP_PASSWORD);
         mAllPrefs.add(mPassword);
-        mDevelopmentShortcut = findAndInitCheckboxPref(DEVELOPMENT_SHORTCUT_KEY);
+        mDevelopmentShortcut = findAndInitSwitchPref(DEVELOPMENT_SHORTCUT_KEY);
 
 
         if (!android.os.Process.myUserHandle().equals(UserHandle.OWNER)) {
@@ -598,7 +599,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     }
 
     private void updateDevelopmentShortcutOptions() {
-        mAdvancedReboot.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
+        mDevelopmentShortcut.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
                 Settings.Secure.DEVELOPMENT_SHORTCUT, 0) != 0);
     }
 
