@@ -19,7 +19,8 @@
 
         <PreferenceScreen android:key="liquid_logo"
                           android:enabled="false"
-                          android:layout="@layout/liquid_logo_row" />
+                          android:layout="@layout/liquid_logo_row"
+                          android:selectable="false" />
 
         <!-- Liquid Share -->
         <Preference
@@ -102,8 +103,7 @@
             <Preference
                     android:key="wallpaper_attributions"
                     android:title="@string/wallpaper_attributions"
-                    android:summary="@string/wallpaper_attributions_values"
-                    />
+                    android:summary="@string/wallpaper_attributions_values" />
 
         </PreferenceScreen>
 
