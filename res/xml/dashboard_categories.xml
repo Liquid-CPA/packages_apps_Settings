@@ -75,21 +75,6 @@
             android:id="@+id/personalization_section"
             android:title="@string/header_category_personalization" >
 
-        <!-- Interface -->
-        <dashboard-tile
-                android:id="@+id/interface_settings"
-                android:icon="@drawable/ic_settings_interface"
-                android:fragment="com.android.settings.slim.InterfaceSettings"
-                android:title="@string/interface_settings_title"
-                />
-
-    </dashboard-category>
-
-    <!-- DEVICE -->
-    <dashboard-category
-            android:id="@+id/device_section"
-            android:title="@string/header_category_device" >
-
         <!-- LiquidSmooth -->
         <dashboard-tile
                 android:id="@+id/main_settings"
@@ -104,6 +89,22 @@
                 android:fragment="com.brewcrewfoo.performance.activities.MainActivity"
                 android:icon="@drawable/ic_settings_performance"
                 android:title="@string/performance_settings" />
+
+
+        <!-- Interface -->
+        <dashboard-tile
+                android:id="@+id/interface_settings"
+                android:icon="@drawable/ic_settings_interface"
+                android:fragment="com.android.settings.slim.InterfaceSettings"
+                android:title="@string/interface_settings_title"
+                />
+
+    </dashboard-category>
+
+    <!-- DEVICE -->
+    <dashboard-category
+            android:id="@+id/personalization_section"
+            android:title="@string/header_category_personalization" >
 
         <!-- Home -->
         <dashboard-tile
