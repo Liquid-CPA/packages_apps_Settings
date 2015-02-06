@@ -36,6 +36,55 @@
                 android:entryValues="@array/toast_animation_values"
                 android:persistent="false" />
 
+            <SwitchPreference
+                android:key="adaptive_backlight"
+                android:title="@string/adaptive_backlight_title"
+                android:summary="@string/adaptive_backlight_summary"
+                android:defaultValue="true" />
+
+            <SwitchPreference
+                android:key="sunlight_enhancement"
+                android:title="@string/sunlight_enhancement_title"
+                android:summary="@string/sunlight_enhancement_summary"
+                android:defaultValue="true" />
+
+            <SwitchPreference
+                android:key="color_enhancement"
+                android:title="@string/color_enhancement_title"
+                android:summary="@string/color_enhancement_summary"
+                android:defaultValue="true" />
+
+
+            <com.android.settings.hardware.DisplayColor
+                android:key="color_calibration"
+                android:title="@string/color_calibration_title"
+                android:dialogTitle="@string/color_calibration_title"
+                android:summary="@string/color_calibration_summary"
+                android:persistent="false" />
+
+            <com.android.settings.hardware.DisplayGamma
+                android:key="gamma_tuning"
+                android:title="@string/gamma_tuning_title_head"
+                android:dialogTitle="@string/gamma_tuning_title_head"
+                android:summary="@string/gamma_tuning_summary_head"
+                android:persistent="false" />
+
+            <SwitchPreference
+                android:key="double_tap_wake_gesture"
+                android:title="@string/double_tap_to_wake_title"
+                android:summary="@string/double_tap_wake_summary"
+                android:defaultValue="true" />
+
+        <!-- DeviceHandler device specific screen off gesture settings -->
+        <Preference
+                android:key="screen_off_gesture_settings"
+                android:title="@string/screen_off_gesture_settings_title">
+                <intent
+                    android:action="com.slim.action.LAUNCH_SCREEN_OFF_GESTURE_SETTINGS"
+                    android:targetPackage="com.slim.device"
+                    android:targetClass="com.slim.device.settings.ScreenOffGestureSettings" />
+        </Preference>
+
         </PreferenceCategory>
 
         <PreferenceCategory
@@ -80,6 +129,12 @@
                 android:title="@string/lift_to_wake_title"
                 android:persistent="false" />
 
+            <SwitchPreference
+                android:key="doze"
+                android:title="@string/doze_title"
+                android:summary="@string/doze_summary"
+                android:persistent="false" />
+
             <com.android.settings.FontDialogPreference
                 android:key="font_size"
                 android:title="@string/title_font_size"
@@ -89,7 +144,7 @@
 
             <PreferenceScreen
                 android:key="display_rotation"
-                android:fragment="com.android.settings.slim.DisplayRotation"
+                android:fragment="com.android.settings.liquid.DisplayRotation"
                 android:title="@string/display_rotation_title" />
 
             <PreferenceScreen
@@ -98,36 +153,7 @@
                 settings:keywords="@string/keywords_display_cast_screen"
                 android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
 
-            <!-- DeviceHandler device specific screen off gesture settings -->
-            <Preference
-                    android:key="screen_off_gesture_settings"
-                    android:title="@string/screen_off_gesture_settings_title">
-                    <intent
-                        android:action="com.slim.action.LAUNCH_SCREEN_OFF_GESTURE_SETTINGS"
-                        android:targetPackage="com.slim.device"
-                        android:targetClass="com.slim.device.settings.ScreenOffGestureSettings" />
-            </Preference>
-
-         </PreferenceCategory>
-
-        <PreferenceCategory
-            android:key="category_doze_options"
-            android:title="@string/display_category_doze_options_title" >
-
-            <SwitchPreference
-                    android:key="doze"
-                    android:title="@string/doze_title"
-                    android:summary="@string/doze_summary"
-                    android:persistent="false" />
-
-            <!-- Ambient display timeout -->
-            <SlimSeekBarPreference
-                    android:key="doze_timeout"
-                    android:title="@string/doze_timeout_title"
-                    android:summary="@string/doze_timeout_summary"
-                    android:dependency="doze" />
-
-         </PreferenceCategory>
+        </PreferenceCategory>
 
          <PreferenceCategory
              android:key="category_wakeup_options"
@@ -147,12 +173,11 @@
                 android:defaultValue="true"
                 android:persistent="false" />
 
-            <com.android.settings.slim.SystemSettingSwitchPreference
-                    android:key="proximity_on_wake"
-                    android:title="@string/proximity_wake_title"
-                    android:summary="@string/proximity_wake_summary"
-                    android:defaultValue="true" />
+            <com.android.settings.liquid.SystemSettingSwitchPreference
+                android:key="proximity_on_wake"
+                android:title="@string/proximity_wake_title"
+                android:summary="@string/proximity_wake_summary"
+                android:defaultValue="true" />
 
          </PreferenceCategory>
-
 </PreferenceScreen>

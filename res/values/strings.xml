@@ -32,9 +32,8 @@
     <!-- Device Info --> <skip />
     <!-- Device Info screen. Used for a status item's value when the proper value is not known -->
     <string name="device_info_default">Unknown</string>
-
     <!-- [CHAR LIMIT=NONE] Device Info screen. Okay we get it, stop pressing, you already have it on -->
-    <string name="show_dev_already">No need, you have already enabled developer options.</string>
+    <string name="show_dev_already">No need, you are already a developer.</string>
 
     <!-- Category headings in left-pane header menu --> <skip />
     <!-- Settings main menu category heading. Wireless and networks (Wi-Fi, Bluetooth, data usage...). [CHAR LIMIT=40] -->
@@ -280,8 +279,6 @@
     <string name="bluetooth_connected_no_headset">Connected (no phone)</string>
     <!-- Bluetooth settings.  Message when connected to a device, except for media audio. [CHAR LIMIT=40] -->
     <string name="bluetooth_connected_no_a2dp">Connected (no media)</string>
-    <!-- Bluetooth settings.  Message when connected to a device, except for pbap. [CHAR LIMIT=40] -->
-    <string name="bluetooth_connected_no_pbap">Connected (no phonebook access)</string>
     <!-- Bluetooth settings.  Message when connected to a device, except for map. [CHAR LIMIT=40] -->
     <string name="bluetooth_connected_no_map">Connected (no message access)</string>
     <!-- Bluetooth settings.  Message when connected to a device, except for phone/media audio. [CHAR LIMIT=40] -->
@@ -911,23 +908,23 @@
     <!-- Unlock Picker Settings --><skip />
 
     <!-- Security Picker --><skip />
-    <!--  Title for security picker to choose the unlock method: None/Pattern/PIN/Password [CHAR LIMIT=22] -->
+    <!-- Title for security picker to choose the unlock method: None/Pattern/PIN/Password [CHAR LIMIT=22] -->
     <string name="lock_settings_picker_title">Choose screen lock</string>
 
-    <!--  Title for security picker when choosing a facelock's backup unlock method: Pattern/PIN [CHAR LIMIT=22] -->
+    <!-- Title for security picker when choosing a facelock's backup unlock method: Pattern/PIN [CHAR LIMIT=22] -->
     <string name="backup_lock_settings_picker_title">Choose backup lock</string>
 
-    <!--  Main Security lock settings --><skip />
-    <!--  Title for PreferenceScreen to launch picker for security method when there is none [CHAR LIMIT=22] -->
+    <!-- Main Security lock settings --><skip />
+    <!-- Title for PreferenceScreen to launch picker for security method when there is none [CHAR LIMIT=22] -->
     <string name="unlock_set_unlock_launch_picker_title">Screen lock</string>
 
-    <!--  Title for PreferenceScreen to change security method: None/Pattern/PIN/Password [CHAR LIMIT=22] -->
+    <!-- Title for PreferenceScreen to change security method: None/Pattern/PIN/Password [CHAR LIMIT=22] -->
     <string name="unlock_set_unlock_launch_picker_change_title">Change lock screen</string>
 
-    <!--  Summary for PreferenceScreen to changeecurity method: None/Pattern/PIN/Password [CHAR LIMIT=45]  -->
+    <!-- Summary for PreferenceScreen to changeecurity method: None/Pattern/PIN/Password [CHAR LIMIT=45]  -->
     <string name="unlock_set_unlock_launch_picker_change_summary">Change or disable pattern, PIN, or password security</string>
 
-    <!--  Summary for PreferenceScreen to changeecurity method: None/Pattern/PIN/Password [CHAR LIMIT=45]  -->
+    <!-- Summary for PreferenceScreen to changeecurity method: None/Pattern/PIN/Password [CHAR LIMIT=45]  -->
     <string name="unlock_set_unlock_launch_picker_enable_summary">Choose a method to lock the screen</string>
 
     <!-- Info explaining the backup lock which is used for facelock -->
@@ -1119,8 +1116,8 @@
 
     <!-- ======================================================================================= -->
     <!-- Note: The opening brackets of HTML style tags are escaped (e.g. "<b>" is "&lt;b>") in   -->
-    <!--   the following resources to enable formatting followed by HTML styling, as described   -->
-    <!--   here:  http://developer.android.com/guide/topics/resources/string-resource.html       -->
+    <!--  the following resources to enable formatting followed by HTML styling, as described   -->
+    <!--  here:  http://developer.android.com/guide/topics/resources/string-resource.html       -->
     <!-- ======================================================================================= -->
 
     <!-- Title for the dialog to enter PIN. [CHAR LIMIT=40] -->
@@ -1246,10 +1243,13 @@
     <string name="bluetooth_profile_pan">Internet access</string>
     <!-- Bluetooth settings. The user-visible string that is used whenever referring to the PBAP profile. [CHAR LIMIT=40] -->
     <string name="bluetooth_profile_pbap">Contact sharing</string>
+    <!-- Bluetooth settings. The user-visible summary string that is used whenever referring to the PBAP profile (sharing contacts). [CHAR LIMIT=60] -->
+    <string name="bluetooth_profile_pbap_summary">Use for contact sharing</string>
     <!-- Bluetooth settings. The user-visible string that is used whenever referring to the PAN profile (sharing this device's Internet connection). [CHAR LIMIT=40] -->
     <string name="bluetooth_profile_pan_nap">Internet connection sharing</string>
     <!-- Bluetooth settings.  The user-visible string that is used whenever referring to the map profile. -->
     <string name="bluetooth_profile_map">Message Access</string>
+
     <!-- Bluetooth settings.  Message for disconnecting from the A2DP profile. [CHAR LIMIT=80] -->
     <string name="bluetooth_disconnect_a2dp_profile"><xliff:g id="device_name">%1$s</xliff:g> will be disconnected from media audio.</string>
     <!-- Bluetooth settings.  Message for disconnecting from the headset profile. [CHAR LIMIT=80] -->
@@ -1282,8 +1282,6 @@
     <string name="bluetooth_headset_profile_summary_connected">Connected to phone audio</string>
     <!-- Bluetooth settings.  Connection options screen.  The summary for the OPP checkbox preference when OPP is connected. -->
     <string name="bluetooth_opp_profile_summary_connected">Connected to file transfer server</string>
-    <!-- Bluetooth settings.  Connection options screen.  The summary for the pbap checkbox preference when pbap is connected. -->
-    <string name="bluetooth_pbap_profile_summary_connected">Connected to pbap server</string>
     <!-- Bluetooth settings.  Connection options screen.  The summary for the map checkbox preference when map is connected. -->
     <string name="bluetooth_map_profile_summary_connected">Connected to map</string>
     <!-- Bluetooth settings.  Connection options screen.  The summary for the OPP checkbox preference when OPP is not connected. -->
@@ -1309,8 +1307,6 @@
          for the PAN checkbox preference that describes how checking it
          will set the PAN profile as preferred. -->
     <string name="bluetooth_pan_profile_summary_use_for">Use for Internet access</string>
-    <!-- Bluetooth settings.  Connection options screen.  The summary for the pbap checkbox preference that describes how checking it will set the pbap profile as preferred. -->
-    <string name="bluetooth_pbap_profile_summary_use_for">Use for Contact sharing</string>
     <!-- Bluetooth settings.  Connection options screen.  The summary for the map checkbox preference that describes how checking it will set the map profile as preferred. -->
     <string name="bluetooth_map_profile_summary_use_for">Use for map</string>
 
@@ -2063,6 +2059,12 @@
     <!-- [CHAR LIMIT=40] Sound & display settings screen, title of dialog for picking font size -->
     <string name="dialog_title_font_size">Font size</string>
 
+    <!-- SIM lock settings title  [CHAR LIMIT=40] -->
+    <string name="sim_lock_settings">SIM card lock settings</string>
+    <!-- Security & location settings screen, setting option name  [CHAR LIMIT=40] -->
+    <string name="sim_lock_settings_category">Set up SIM card lock</string>
+    <!-- Security & location settings screen, section heading for settings related to sim card locking  [CHAR LIMIT=40] -->
+    <string name="sim_lock_settings_title">SIM card lock</string>
     <!-- SIM card lock settings screen, setting check box label  [CHAR LIMIT=40] -->
     <string name="sim_pin_toggle">Lock SIM card</string>
     <!-- SIM card lock settings screen, setting option summary text when SIM lock check box is selected  [CHAR LIMIT=40] -->
@@ -2093,7 +2095,9 @@
     <string name="sim_bad_pin">Incorrect PIN</string>
     <!-- SIM card lock settings screen, SIM PIN dialog message when PINs don't match  [CHAR LIMIT=40] -->
     <string name="sim_pins_dont_match">PINs don\'t match</string>
-    <!-- SIM card lock settings screen, SIM PIN dialog message when the entered PIN is correct-->
+    <!-- SIM card lock settings screen, toast after not entering correct SIM PIN  [CHAR LIMIT=40] -->
+    <string name="sim_change_failed">Can\'t change PIN.\nPossibly incorrect PIN.</string>
+    <!-- SIM card lock settings screen, SIM PIN dialog message when the entered PIN is correct [CHAR LIMIT=40] -->
     <string name="sim_change_succeeded">SIM PIN changed successfully</string>
     <!-- SIM card lock settings screen, toast after not entering correct SIM PIN [CHAR LIMIT=40] -->
     <string name="sim_lock_failed">Can\'t change SIM card lock state.\nPossibly incorrect PIN.</string>
@@ -2150,6 +2154,8 @@
     <string name="device_status">Status</string>
     <!-- About tablet screen, summary of the item that takes you to tablet status screen -->
     <string name="device_status_summary" product="tablet">Status of the battery, network, and other information</string>
+    <!-- About phone screen, summary of the item to go into the phone status screen -->
+    <string name="device_status_summary" product="default">Phone number, signal, etc.</string>
     <!-- Main settings screen item's title to go into the storage settings screen [CHAR LIMIT=25] -->
     <string name="storage_settings" >Storage</string>
     <!-- Storage settings screen title -->
@@ -2420,17 +2426,17 @@
     <!-- SD card & phone storage settings screen, setting option summary text under Internal phone storage heading -->
     <string name="master_clear_summary" product="default">Erases all data on phone</string>
     <!-- SD card & phone storage settings screen, message on screen after user selects Factory data reset [CHAR LIMIT=NONE] -->
-    <string name="master_clear_desc" product="tablet">"This will erase all data from your tablet\'s <b>internal storage</b>, including:\n\n<li>Your Google account</li>\n<li>System and app data and settings</li>\n<li>Downloaded apps</li>"</string>
+    <string name="master_clear_desc" product="tablet">This will erase all data from your tablet\'s <b>internal storage</b>, including:\n\n<li>Your Google account</li>\n<li>System and app data and settings</li>\n<li>Downloaded apps</li></string>
     <!-- SD card & phone storage settings screen, message on screen after user selects Factory data reset [CHAR LIMIT=NONE] -->
-    <string name="master_clear_desc" product="default">"This will erase all data from your phone\'s <b>internal storage</b>, including:\n\n<li>Your Google account</li>\n<li>System and app data and settings</li>\n<li>Downloaded apps"</li></string>
+    <string name="master_clear_desc" product="default">This will erase all data from your phone\'s <b>internal storage</b>, including:\n\n<li>Your Google account</li>\n<li>System and app data and settings</li>\n<li>Downloaded apps</li></string>
     <!-- SD card & phone storage settings screen, instructions and list of current accounts.  The list of accounts follows this text[CHAR LIMIT=NONE] -->
-    <string name="master_clear_accounts" product="default">"\n\nYou are currently signed into the following accounts:\n"</string>
+    <string name="master_clear_accounts" product="default">\n\nYou are currently signed into the following accounts:\n</string>
     <!-- SD card & phone storage settings screen, list of items in user data storage (USB storage or SD card) that will be erased during this operation [CHAR LIMIT=NONE] -->
-    <string name="master_clear_desc_also_erases_external">"<li>Music</li>\n<li>Photos</li>\n<li>Other user data</li>"</string>
+    <string name="master_clear_desc_also_erases_external"><li>Music</li>\n<li>Photos</li>\n<li>Other user data</li></string>
     <!-- SD card & phone storage settings screen, instructions about whether to also erase the external storage (SD card) when erasing the internal storage [CHAR LIMIT=NONE] -->
-    <string name="master_clear_desc_erase_external_storage" product="nosdcard">"\n\nTo clear music, pictures, and other user data, the <b>USB storage</b> needs to be erased."</string>
+    <string name="master_clear_desc_erase_external_storage" product="nosdcard">\n\nTo clear music, pictures, and other user data, the <b>USB storage</b> needs to be erased.</string>
     <!-- SD card & phone storage settings screen, instructions about whether to also erase the external storage (SD card) when erasing the internal storage [CHAR LIMIT=NONE] -->
-    <string name="master_clear_desc_erase_external_storage" product="default">"\n\nTo clear music, pictures, and other user data, the <b>SD card</b> needs to be erased."</string>
+    <string name="master_clear_desc_erase_external_storage" product="default">\n\nTo clear music, pictures, and other user data, the <b>SD card</b> needs to be erased.</string>
     <!-- SD card & phone storage settings screen, label for check box to erase USB storage [CHAR LIMIT=30] -->
     <string name="erase_external_storage" product="nosdcard">Erase USB storage</string>
     <!-- SD card & phone storage settings screen, label for check box to erase SD card [CHAR LIMIT=30] -->
@@ -2617,6 +2623,7 @@
     <string name="location_mode_battery_saving_description">Use Wi\u2011Fi and mobile networks to determine location</string>
     <!-- [CHAR LIMIT=130] Location mode screen, description for sensors only mode -->
     <string name="location_mode_sensors_only_description">Use GPS to determine your location</string>
+
     <!-- [CHAR LIMIT=30] Security & location settings screen, setting check box label for Google location service (cell ID, wifi, etc.) -->
     <string name="location_network_based">Wi\u2011Fi &amp; mobile network location</string>
     <!-- [CHAR LIMIT=130] Security & location settings screen, setting summary for Google location service check box-->
@@ -2838,13 +2845,13 @@
     <string name="total_size_label">Total</string>
     <!-- Manage applications, individual application info screen, label under Storage heading. The amount of space taken up by the application itself (for example, the java compield files and things like that) -->
     <string name="application_size_label">App</string>
-    <!--  Manage applications, individual application info screen, label under Storage heading.  The amount of space taken up by the app's code on USB storage [CHARSIZE=40] -->
+    <!-- Manage applications, individual application info screen, label under Storage heading.  The amount of space taken up by the app's code on USB storage [CHARSIZE=40] -->
     <string name="external_code_size_label">USB storage app</string>
     <!-- Manage applications, individual application info screen, label under Storage heading.  The amount of sapce taken up by the app's data (for example, downloaded emails or something like that) -->
     <string name="data_size_label">Data</string>
-    <!--  Manage applications, individual application info screen, label under Storage heading.  The amount of space taken up by the app's data on USB storage [CHARSIZE=40] -->
+    <!-- Manage applications, individual application info screen, label under Storage heading.  The amount of space taken up by the app's data on USB storage [CHARSIZE=40] -->
     <string name="external_data_size_label" product="nosdcard">USB storage data</string>
-    <!--  Manage applications, individual application info screen, label under Storage heading.  The amount of space taken up by the app's data on the SD card [CHARSIZE=40] -->
+    <!-- Manage applications, individual application info screen, label under Storage heading.  The amount of space taken up by the app's data on the SD card [CHARSIZE=40] -->
     <string name="external_data_size_label" product="default">SD card</string>
     <!-- Manage applications, individual application info screen, button label under Storage heading. Button to remove the application from the system. -->
     <string name="uninstall_text">Uninstall</string>
@@ -3524,7 +3531,7 @@
     <string name="accessibility_global_gesture_preference_summary_on">On</string>
     <!-- Summary for the preference screen to enable the global geture that turns on accessibility (off state). [CHAR LIMIT=35] -->
     <string name="accessibility_global_gesture_preference_summary_off">Off</string>
-    <!--  Description for the preference screen to enable the global geture taht turns on accessibility. [CHAR LIMIT=none] -->
+    <!-- Description for the preference screen to enable the global geture taht turns on accessibility. [CHAR LIMIT=none] -->
     <string name="accessibility_global_gesture_preference_description">When this feature is turned on, you can quickly enable accessibility features in two steps:\n\nStep 1: Press and hold the power button until you hear a sound or feel a vibration.\n\nStep 2: Touch and hold two fingers until you hear audio confirmation.\n\nIf the device has multiple users, using this shortcut on the lock screen temporarily enables accessibility until the device is unlocked.</string>
     <!-- Title for the accessibility preference to enable large text. [CHAR LIMIT=35] -->
     <string name="accessibility_toggle_large_text_preference_title">Large text</string>
@@ -4667,7 +4674,7 @@
     <string name="misc_files_selected_count">selected <xliff:g id="number" example="3">%1$d</xliff:g> out of <xliff:g id="total" example="15">%2$d</xliff:g></string>
     <!-- number of bytes represented by the selected misc files [CHAR LIMIT=40] -->
     <string name="misc_files_selected_count_bytes"><xliff:g id="number" example="3.25MB">%1$s</xliff:g> out of <xliff:g id="total" example="15.25MB">%2$s</xliff:g></string>
-    <!--  action to select all [CHAR LIMIT=30] -->
+    <!-- action to select all [CHAR LIMIT=30] -->
     <string name="select_all">Select all</string>
 
     <!-- HDCP checking title, used for debug purposes only. [CHAR LIMIT=25] -->
@@ -4870,11 +4877,11 @@
     <!-- Title for menu option to show details for all cellular networks. [CHAR LIMIT=26] -->
     <string name="data_usage_menu_cellular_networks">Mobile networks</string>
 
-    <!--  Title for menu option to enable global auto-sync of personal account data [CHAR LIMIT=30] -->
+    <!-- Title for menu option to enable global auto-sync of personal account data [CHAR LIMIT=30] -->
     <string name="account_settings_menu_auto_sync">Auto-sync data</string>
-    <!--  Title for menu option to enable global auto-sync of personal account data [CHAR LIMIT=30] -->
+    <!-- Title for menu option to enable global auto-sync of personal account data [CHAR LIMIT=30] -->
     <string name="account_settings_menu_auto_sync_personal">Auto-sync personal data</string>
-    <!--  Title for menu option to enable global auto-sync of work account data [CHAR LIMIT=30] -->
+    <!-- Title for menu option to enable global auto-sync of work account data [CHAR LIMIT=30] -->
     <string name="account_settings_menu_auto_sync_work">Auto-sync work data</string>
 
     <!-- Title for option to change data usage cycle day. [CHAR LIMIT=32] -->
@@ -4945,13 +4952,13 @@
     <string name="data_usage_restrict_denied_dialog">Restricting background data is possible only when you\'ve set a mobile data limit.</string>
     <!--  Title of dialog shown when user enables global auto sync [CHAR LIMIT=32] -->
     <string name="data_usage_auto_sync_on_dialog_title">Turn auto-sync data on?</string>
-    <!--  Body of dialog shown when user enables global auto sync, for tablet [CHAR LIMIT=none] -->
+    <!-- Body of dialog shown when user enables global auto sync, for tablet [CHAR LIMIT=none] -->
     <string name="data_usage_auto_sync_on_dialog" product="tablet">Any changes you make to your accounts on the web will be automatically copied to your tablet.\n\nSome accounts may also automatically copy any changes you make on the tablet to the web. A Google Account works this way.</string>
-    <!--  Body of dialog shown when user enables global auto sync [CHAR LIMIT=none] -->
+    <!-- Body of dialog shown when user enables global auto sync [CHAR LIMIT=none] -->
     <string name="data_usage_auto_sync_on_dialog" product="default">Any changes you make to your accounts on the web will be automatically copied to your phone.\n\nSome accounts may also automatically copy any changes you make on the phone to the web. A Google Account works this way.</string>
-    <!--  Title of dialog shown when user disables global auto sync [CHAR LIMIT=32] -->
+    <!-- Title of dialog shown when user disables global auto sync [CHAR LIMIT=32] -->
     <string name="data_usage_auto_sync_off_dialog_title">Turn auto-sync data off?</string>
-    <!--  Body of dialog shown when user disables global auto sync [CHAR LIMIT=none] -->
+    <!-- Body of dialog shown when user disables global auto sync [CHAR LIMIT=none] -->
     <string name="data_usage_auto_sync_off_dialog">This will conserve data and battery usage, but you\'ll need to sync each account manually to collect recent information. And you won\'t receive notifications when updates occur.</string>
 
     <!-- Title of dialog for editing data usage cycle reset date. [CHAR LIMIT=48] -->
@@ -5112,7 +5119,7 @@
     <!-- Alert dialog confirmation when removing a user CA certificate. -->
     <string name="trusted_credentials_remove_confirmation">Permanently remove the user CA certificate?</string>
 
-    <!--  Title for spell checker settings -->
+    <!-- Title for spell checker settings -->
     <string name="spellcheckers_settings_title">Spell checker</string>
 
     <!-- Prompt for the user to enter their current full-backup password -->
@@ -5182,7 +5189,7 @@
     <string name="user_owner">Owner</string>
     <!-- User settings title for current user entry "You" user. [CHAR LIMIT=30] -->
     <string name="user_you">You (<xliff:g id="name" example="Name">%s</xliff:g>)</string>
-    <!-- Title for the preference to enter the nickname of the userto display in the user switcher [CHAR LIMIT=25]-->
+    <!-- Title for the preference to enter the nickname of the user to display in the user switcher [CHAR LIMIT=25]-->
     <string name="user_nickname">Nickname</string>
     <!-- Title for add user type dialog [CHAR LIMIT=45] -->
     <string name="user_add_user_type_title">Add</string>
@@ -5328,7 +5335,7 @@
     <!-- Label for are-notifications-enabled checkbox in app details [CHAR LIMIT=20] -->
     <string name="app_notifications_switch_label">Show notifications</string>
 
-    <!--  Help URLs for some screens. Not specified here. Specified in product overlays --><skip/>
+    <!-- Help URLs for some screens. Not specified here. Specified in product overlays --><skip/>
     <!-- Help menu label [CHAR LIMIT=20] -->
     <string name="help_label">Help &amp; feedback</string>
     <!-- Help URL, WiFi [DO NOT TRANSLATE] -->
@@ -5531,7 +5538,7 @@
     <!-- When a SIM preference hasn't been selected yet, this string is displayed as the pref summary until the user chooses a SIM subscription from the preference list [CHAR LIMIT=50] -->
     <string name="sim_selection_required_pref">Selection required</string>
 
-    <!--Dashboard strings-->
+    <!-- Dashboard strings-->
     <!-- Text to describe the dashboard fragment title [CHAR LIMIT=16] -->
     <string name="dashboard_title">Settings</string>
 
@@ -5548,7 +5555,7 @@
     <!-- Text used to identify the search results -->
     <string name="search_results_label">Results</string>
 
-    <!--Search Keywords [CHAR LIMIT=NONE]-->
+    <!-- Search Keywords [CHAR LIMIT=NONE] -->
     <string name="keywords_wifi">wifi wi-fi network connection</string>
     <string name="keywords_more_default_sms_app">text message</string>
     <string name="keywords_more_mobile_networks">mobile cellular cell carrier wireless</string>
@@ -5602,7 +5609,7 @@
     <!-- Sounds and Notification -->
 
     <!-- Sound & notification: Settings header. [CHAR LIMIT=30] -->
-    <string name="notification_settings">Sound &amp; notification</string>
+    <string name="notification_settings">Sounds</string>
 
     <!-- Sound & notification > Sound section: Title for the option managing media volume. [CHAR LIMIT=30] -->
     <string name="media_volume_option_title">Media volume</string>

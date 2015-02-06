@@ -90,13 +90,20 @@
                 android:icon="@drawable/ic_settings_performance"
                 android:title="@string/performance_settings" />
 
-
-        <!-- Interface -->
+        <!-- LiquidSmooth Privacy Settings
         <dashboard-tile
-                android:id="@+id/interface_settings"
-                android:icon="@drawable/ic_settings_interface"
-                android:fragment="com.android.settings.slim.InterfaceSettings"
-                android:title="@string/interface_settings_title"
+                android:id="@+id/privacy_settings_liquidsmooth"
+                android:title="@string/privacy_settings_liquidsmooth_title"
+                android:fragment="com.android.settings.liquid.PrivacySettings"
+                android:icon="@drawable/ic_settings_privacy"
+                /> -->
+
+        <!-- Hardware Keys -->
+        <dashboard-tile
+                android:id="@+id/button_settings"
+                android:title="@string/button_pref_title"
+                android:fragment="com.android.settings.ButtonSettings"
+                android:icon="@drawable/ic_settings_buttons"
                 />
 
         <!-- BitSyko Layers App -->
@@ -114,8 +121,8 @@
 
     <!-- DEVICE -->
     <dashboard-category
-            android:id="@+id/personalization_section"
-            android:title="@string/header_category_personalization" >
+            android:id="@+id/device_section"
+            android:title="@string/header_category_device" >
 
         <!-- Home -->
         <dashboard-tile
@@ -282,13 +289,16 @@
                 android:icon="@drawable/ic_settings_development"
                 />
 
-        <!-- Superuser -->
+        <!-- SuperSU -->
         <dashboard-tile
-                android:id="@+id/superuser"
-                android:fragment="com.koushikdutta.superuser.PolicyNativeFragment"
-                android:icon="@drawable/ic_action_permission"
-                android:title="@string/superuser"
-                />
+            android:id="@+id/supersu_settings"
+            android:icon="@drawable/ic_settings_supersu"
+            android:title="@string/supersu_title">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="eu.chainfire.supersu"
+                android:targetClass="eu.chainfire.supersu.MainActivity" />
+        </dashboard-tile>
 
         <!-- About Device -->
         <dashboard-tile

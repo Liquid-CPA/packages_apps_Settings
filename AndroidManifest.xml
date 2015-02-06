@@ -36,14 +36,14 @@
     <uses-permission android:name="android.permission.CLEAR_APP_USER_DATA" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS"/>
-    <uses-permission android:name="android.permission.ACCESS_CHECKIN_PROPERTIES"/>
-    <uses-permission android:name="android.permission.READ_USER_DICTIONARY"/>
-    <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY"/>
-    <uses-permission android:name="android.permission.FORCE_STOP_PACKAGES"/>
-    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
-    <uses-permission android:name="android.permission.BATTERY_STATS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_CHECKIN_PROPERTIES" />
+    <uses-permission android:name="android.permission.READ_USER_DICTIONARY" />
+    <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY" />
+    <uses-permission android:name="android.permission.FORCE_STOP_PACKAGES" />
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+    <uses-permission android:name="android.permission.BATTERY_STATS" />
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
     <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.MOVE_PACKAGE" />
@@ -69,33 +69,13 @@
     <uses-permission android:name="android.permission.MANAGE_DEVICE_ADMINS" />
     <uses-permission android:name="android.permission.READ_SEARCH_INDEXABLES" />
     <uses-permission android:name="android.permission.OEM_UNLOCK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- liquid feature permissions -->
+    <uses-permission android:name="android.permission.GET_TOP_ACTIVITY_INFO"/>
 
     <!-- Heads up -->
     <uses-permission android:name="android.permission.CHANGE_HEADS_UP_STATE" />
-
-    <permission
-        android:name="android.permission.REQUEST_SUPERUSER"
-        android:protectionLevel="signature" />
-    <permission
-        android:name="android.permission.REPORT_SUPERUSER"
-        android:protectionLevel="signature" />
-
-    <permission-group
-        android:name="android.permission-group.SUPERUSER"
-        android:description="@string/superuser_description_more"
-        android:icon="@drawable/ic_action_permission"
-        android:label="@string/superuser"
-        android:priority="10000" />
-
-    <permission
-        android:name="android.permission.ACCESS_SUPERUSER"
-        android:description="@string/superuser_description_more"
-        android:icon="@drawable/ic_action_permission"
-        android:label="@string/superuser_description"
-        android:logo="@drawable/ic_action_permission"
-        android:permissionGroup="android.permission-group.SUPERUSER"
-        android:protectionLevel="dangerous" />
-
 
     <application android:label="@string/settings_label"
             android:icon="@mipmap/ic_launcher_settings"
@@ -106,51 +86,11 @@
             android:supportsRtl="true"
             android:allowBackup="false">
 
-        <!-- Only system/su can open this activity -->
-        <!-- This activity will then call the MultitaskSuRequestActivity to create a new task stack -->
-        <activity
-            android:name="com.koushikdutta.superuser.RequestActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/superuser"
-            android:launchMode="singleTask"
-            android:excludeFromRecents="true"
-            android:permission="android.permission.REQUEST_SUPERUSER"
-            android:process=":superuser"
-            android:taskAffinity="com.android.settings.superuser"
-            android:theme="@style/RequestThemeDark" />
-        <!-- Only system/su can open this activity -->
-        <!-- This is activity is started in multiuser mode when the user invoking su -->
-        <!-- is not the device owner (user id 0). -->
-        <activity
-            android:name="com.koushikdutta.superuser.NotifyActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/superuser"
-            android:launchMode="singleTask"
-            android:excludeFromRecents="true"
-            android:permission="android.permission.REQUEST_SUPERUSER"
-            android:process=":superuser"
-            android:taskAffinity="com.android.settings.superuser"
-            android:theme="@style/RequestThemeDark" />
-
-        <!-- Multiple instances of this activity can be running for multiple su requests -->
-        <activity
-            android:name="com.koushikdutta.superuser.MultitaskSuRequestActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:excludeFromRecents="true"
-            android:exported="false"
-            android:label="@string/request"
-            android:process=":superuser"
-            android:taskAffinity="com.android.settings.superuser"
-            android:theme="@style/RequestThemeDark" />
-
-        <receiver
-            android:name="com.koushikdutta.superuser.SuReceiver"
-            android:permission="android.permission.REPORT_SUPERUSER" />
-
-
-
+        <uses-library android:name="org.cyanogenmod.hardware" required="false" />
 
         <!-- Settings -->
+        <uses-library android:name="org.cyanogenmod.hardware"
+                android:required="false" />
 
         <activity android:name="Settings"
                 android:taskAffinity="com.android.settings"
@@ -179,8 +119,8 @@
 
         <receiver android:name="ManagedProfileSetup">
             <intent-filter>
-                <action android:name="android.intent.action.USER_INITIALIZE"/>
-                <action android:name="android.intent.action.PRE_BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_INITIALIZE" />
+                <action android:name="android.intent.action.PRE_BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
@@ -320,7 +260,7 @@
                 android:taskAffinity="com.android.settings"
                 android:parentActivityName="Settings$WifiSettingsActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -331,7 +271,7 @@
                 android:taskAffinity="com.android.settings"
                 android:parentActivityName="Settings$WifiSettingsActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -340,7 +280,7 @@
         <activity android:name=".wifi.WifiAPITest"
                 android:theme="@style/Theme.SubSettingsDialogWhenLarge">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -349,7 +289,7 @@
         <activity android:name=".wifi.WifiStatusTest"
                 android:theme="@style/Theme.SubSettingsDialogWhenLarge">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -381,12 +321,6 @@
                 android:value="true" />
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                        android:value="com.android.settings.ApnSettings" />
-        </activity>
-
-        <activity android:name=".SubSettings$BluetoothSubSettings"
-                android:taskAffinity="com.android.settings"
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:parentActivityName="Settings">
         </activity>
 
         <activity android:name="Settings$BluetoothSettingsActivity"
@@ -922,7 +856,7 @@
         <activity android:name="Settings$AppOpsSummaryActivity"
                 android:label="@string/app_ops_settings"
                 android:taskAffinity=""
-                android:enabled="false">
+                android:excludeFromRecents="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.settings.APP_OPS_SETTINGS" />
@@ -935,30 +869,6 @@
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/application_settings" />
         </activity>
-
-        <!-- Still need a top-level activity for showing app ops details.  Aliasing
-             trick is so the code that is now a fragment can still be called
-             AppOpsDetails. -->
-        <activity android:name=".applications.AppOpsDetailsTop"
-                  android:label="@string/app_ops_settings"
-                  android:exported="true"
-                  android:taskAffinity=""
-                  android:excludeFromRecents="true"
-                  android:parentActivityName="Settings$AppOpsSummaryActivity">
-        </activity>
-
-        <!-- Keep compatibility with old shortcuts. -->
-        <activity-alias android:name=".applications.AppOpsDetails"
-                android:label="@string/app_ops_settings"
-                android:exported="true"
-                android:excludeFromRecents="true"
-                android:targetActivity=".applications.AppOpsDetailsTop">
-            <intent-filter>
-                <action android:name="android.settings.APP_OPS_DETAILS_SETTINGS" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:scheme="package" />
-            </intent-filter>
-        </activity-alias>
 
         <activity android:name="Settings$LocationSettingsActivity"
                 android:label="@string/location_settings_title"
@@ -1136,7 +1046,7 @@
         </activity-alias>
 
         <activity android:name="IccLockSettings"
-                android:label="@string/sim_lock_settings"
+                android:label="@string/sim_lock_settings_cm"
                 android:theme="@style/Theme.SubSettingsDialogWhenLarge"
                 android:process="com.android.phone">
             <intent-filter>
@@ -1227,7 +1137,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".notification.RedactionInterstitial"/>
+        <activity android:name=".notification.RedactionInterstitial" />
 
         <activity android:name=".notification.RedactionSettingsStandalone"
                   android:exported="true">
@@ -1237,21 +1147,21 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="ConfirmLockPattern"/>
+        <activity android:name="ConfirmLockPattern" />
 
         <activity android:name="ConfirmLockGesture"/>
 
         <activity android:name="ConfirmLockPassword"
-            android:windowSoftInputMode="stateVisible|adjustResize"/>
+            android:windowSoftInputMode="stateVisible|adjustResize" />
 
         <!-- Note this must not be exported since it returns the password in the intent -->
         <activity android:name="ConfirmLockPattern$InternalActivity"
-            android:exported="false"/>
+            android:exported="false" />
 
         <!-- Note this must not be exported since it returns the password in the intent -->
         <activity android:name="ConfirmLockPassword$InternalActivity"
             android:exported="false"
-            android:windowSoftInputMode="stateVisible|adjustResize"/>
+            android:windowSoftInputMode="stateVisible|adjustResize" />
 
         <activity android:name="ChooseLockGeneric"
             android:label="@string/lockpassword_choose_lock_generic_header"
@@ -1269,17 +1179,17 @@
             android:excludeFromRecents="true"
         />
 
-        <activity android:name="ChooseLockPattern" android:exported="false"/>
+        <activity android:name="ChooseLockPattern" android:exported="false" />
 
         <activity android:name="ChooseLockGesture" android:exported="false"/>
 
         <activity android:name="ChooseLockPassword" android:exported="false"
-            android:windowSoftInputMode="stateVisible|adjustResize"/>
+            android:windowSoftInputMode="stateVisible|adjustResize" />
 
-        <activity android:name=".EncryptionInterstitial"/>
+        <activity android:name=".EncryptionInterstitial" />
 
         <!-- Runs in the phone process since it needs access to the Phone object -->
-        <activity android:name=".deviceinfo.MSimSubscriptionStatus"
+        <activity android:name=".deviceinfo.msim.MSimSubscriptionStatus"
                 android:label="@string/device_status_activity_title"
                 android:theme="@style/Theme.Settings"
                 android:process="com.android.phone">
@@ -1322,7 +1232,7 @@
         </activity>
 
         <activity android:name=".deviceinfo.MiscFilesHandler"
-                android:theme="@style/Theme.SubSettingsDialogWhenLarge"/>
+                android:theme="@style/Theme.SubSettingsDialogWhenLarge" />
 
         <activity android:name="ApnEditor"
                 android:label="@string/apn_edit">
@@ -1789,7 +1699,7 @@
         <activity android:name="com.android.settings.accounts.ChooseAccountActivity"
             android:label="@string/header_add_an_account"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/Theme.SubSettingsDialogWhenLarge"/>
+            android:theme="@style/Theme.SubSettingsDialogWhenLarge" />
 
         <activity android:name=".CryptKeeper"
                   android:immersive="true"
@@ -1836,6 +1746,18 @@
                 android:resource="@id/security_settings" />
         </activity>
 
+        <activity-alias android:name=".blacklist.BlacklistSettings"
+                android:taskAffinity="com.android.settings"
+                android:label="@string/blacklist_title"
+                android:targetActivity="Settings$BlacklistSettingsActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:exported="true">
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.android.settings.blacklist.BlacklistSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                       android:resource="@id/security_settings" />
+        </activity-alias>
+
         <!-- CyanogenMod activities Start -->
         <activity android:name=".profiles.ProfilesSettings" />
         <activity android:name="Settings$ProfilesSettingsActivity"
@@ -1872,8 +1794,8 @@
         <activity android:name=".profiles.NFCProfile"
                 android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
-                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="cm/profile" />
             </intent-filter>
         </activity>
@@ -1886,7 +1808,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.app.action.START_ENCRYPTION" />
-                <category android:name="android.intent.category.DEFAULT" /> />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.CryptKeeperSettings" />
@@ -2164,6 +2086,12 @@
             </intent-filter>
         </receiver>
 
+        <receiver android:name=".liquid.BootReceiver" android:enabled="true">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
         <!-- Watch for ContactsContract.Profile changes and update the user's photo.  -->
         <receiver android:name=".users.ProfileUpdateReceiver">
             <intent-filter>
@@ -2178,6 +2106,95 @@
         </receiver>
 
         <service android:name="com.android.settings.liquid.hfm.CheckHosts" />
+
+        <activity android:name=".liquid.navbar.NavbarTabHostFragment" />
+
+        <activity
+            android:name="com.android.settings.liquid.CreateShortcut"
+            android:label="@string/shortcut_label"
+            android:icon="@drawable/liquid_actions">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.android.settings.liquid.activities.FlushMemory"
+            android:label="@string/toggle_flushmemory"
+            android:icon="@drawable/liquid_flush_memory"
+            android:theme="@android:style/Theme.Holo.Panel"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop" >
+            <intent-filter>
+                <action android:name="com.android.settings.liquid.INTENT_FLUSHMEMORY_TOGGLE" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.systemui.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.android.settings.liquid.activities.ProfileActivity"
+            android:label="@string/toggle_profile"
+            android:icon="@drawable/ic_sysbar_profile"
+            android:theme="@android:style/Theme.Holo.Panel"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.systemui.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.android.settings.liquid.activities.StartDreamActivity"
+            android:label="@string/toggle_dream"
+            android:icon="@drawable/ic_sysbar_dream"
+            android:theme="@android:style/Theme.Holo.Panel"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.systemui.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.android.settings.liquid.activities.RingVibToggle"
+            android:label="@string/toggle_ring_vib"
+            android:icon="@drawable/ic_lockscreen_vib"
+            android:theme="@android:style/Theme.Holo.Panel"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop" >
+            <intent-filter>
+                <action android:name="com.android.settings.liquid.INTENT_RING_VIB_TOGGLE" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.systemui.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.android.settings.liquid.activities.RingSilentToggle"
+            android:label="@string/toggle_ring_silent"
+            android:icon="@drawable/ic_lockscreen_silent"
+            android:theme="@android:style/Theme.Holo.Panel"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop" >
+            <intent-filter>
+                <action android:name="com.android.settings.liquid.INTENT_RING_SILENT_TOGGLE" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.systemui.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.android.settings.liquid.activities.RingVibSilentToggle"
+            android:label="@string/toggle_ring_vib_silent"
+            android:icon="@drawable/ic_lockscreen_soundon"
+            android:theme="@android:style/Theme.Holo.Panel"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop" >
+            <intent-filter>
+                <action android:name="com.android.settings.liquid.INTENT_RING_VIB_SILENT_TOGGLE" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.systemui.SHORTCUT" />
+            </intent-filter>
+        </activity>
 
         <provider
             android:name="android.support.v4.content.FileProvider"

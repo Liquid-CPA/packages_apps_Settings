@@ -4,9 +4,9 @@
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
-  
+
           http://www.apache.org/licenses/LICENSE-2.0
-  
+
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -55,9 +55,10 @@
                     android:targetClass="com.android.settings.liquid.extrainfo.MainActivity" />
         </PreferenceScreen>
 
+        <!-- Device status - launches activity -->
         <PreferenceScreen android:key="status_info"
                 android:title="@string/device_status" 
-                android:summary="@string/device_status_summary">
+                android:summary="@string/device_status_summary_cm">
             <intent android:action="android.intent.action.MAIN"
                     android:targetPackage="com.android.settings"
                     android:targetClass="com.android.settings.deviceinfo.Status" />
@@ -66,14 +67,9 @@
         <!-- Legal Information -->
         <PreferenceScreen
                 android:key="container"
-<<<<<<< HEAD
-                android:title="@string/legal_information">
-                    
-=======
                 android:title="@string/legal_information"
                 android:summary="@string/device_legal_summary">
 
->>>>>>> 37b18e1... Make most about phone options unclickable and add summary for legal info
             <!-- Note: The titles given here probably won't be used.  Instead, we programmatically
                        fill the title with the label of the activity with the corresponding action.
                        If there is not an activity for an action, the item will be removed from the
@@ -125,29 +121,17 @@
         </PreferenceScreen>
 
         <!-- Device hardware model -->
-        <Preference android:key="device_model" 
+        <Preference android:key="device_model"
                 style="?android:preferenceInformationStyle"
                 android:title="@string/model_number"
                 android:summary="@string/device_info_default"
                 android:selectable="false" />
 
         <!-- Device firmware version -->
-        <Preference android:key="firmware_version" 
+        <Preference android:key="firmware_version"
                 style="?android:preferenceInformationStyle"
                 android:title="@string/firmware_version"
                 android:summary="@string/device_info_default" />
-
-        <!-- Slim firmware version -->
-        <Preference android:key="slim_version"
-                style="?android:preferenceInformationStyle"
-                android:title="@string/slim_version_title"
-                android:summary="@string/slim_version_default"/>
-
-        <!-- Build date -->
-        <Preference android:key="build_date"
-                style="?android:preferenceInformationStyle"
-                android:title="@string/build_date"
-                android:summary="@string/build_date_default" />
 
         <!-- Device FCC equipment id -->
         <Preference android:key="fcc_equipment_id"
@@ -157,34 +141,34 @@
                 android:selectable="false" />
 
         <!-- Device Baseband version -->
-        <Preference android:key="baseband_version" 
+        <Preference android:key="baseband_version"
                 style="?android:preferenceInformationStyle"
                 android:title="@string/baseband_version"
                 android:summary="@string/device_info_default"
                 android:selectable="false" />
 
         <!-- Device Kernel version -->
-        <Preference android:key="kernel_version" 
+        <Preference android:key="kernel_version"
                 style="?android:preferenceInformationStyle"
                 android:title="@string/kernel_version"
                 android:summary="@string/device_info_default" />
 
-        <!-- Device cpu info -->
-        <Preference android:key="device_cpu"
+        <!-- Liquid version -->
+        <Preference android:key="liquid_version"
                 style="?android:preferenceInformationStyle"
-                android:title="@string/cpu_info"
-                android:summary="@string/device_info_default"
+                android:title="@string/liquid_version_title"
+                android:summary="@string/liquid_version_default"
                 android:selectable="false" />
 
-        <!-- Device mem info -->
-        <Preference android:key="device_memory"
+        <!-- Build date -->
+        <Preference android:key="build_date"
                 style="?android:preferenceInformationStyle"
-                android:title="@string/mem_info"
-                android:summary="@string/device_info_default"
+                android:title="@string/build_date"
+                android:summary="@string/build_date_default"
                 android:selectable="false" />
 
         <!-- Detailed build version -->
-        <Preference android:key="build_number" 
+        <Preference android:key="build_number"
                 style="?android:preferenceInformationStyle"
                 android:title="@string/build_number"
                 android:summary="@string/device_info_default"
